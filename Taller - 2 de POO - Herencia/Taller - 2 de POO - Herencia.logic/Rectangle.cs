@@ -4,21 +4,14 @@
 namespace Taller___2_de_POO___Herencia.logic
 {
     /// <summary>
-    /// Class representing a rectangle
+    /// Class representing a rectangle, inherits from Square
     /// </summary>
-    public class Rectangle : GeometricFigure
+    public class Rectangle : Square
     {
-        // Private fields for width and height
-        private double _a;
+        // Private field for second side
         private double _b;
 
-        // Properties with validation
-        public double A
-        {
-            get { return _a; }
-            set { _a = ValidateA(value); }
-        }
-
+        // Property for second side with validation
         public double B
         {
             get { return _b; }
@@ -26,35 +19,26 @@ namespace Taller___2_de_POO___Herencia.logic
         }
 
         // Constructor
-        public Rectangle(string name, double a, double b)
+        public Rectangle(string name, double a, double b) : base(name, a)
         {
-            Name = name;
-            A = a;
             B = b;
         }
 
-        // Validation methods
-        private double ValidateA(double a)
-        {
-            if (a <= 0)
-                throw new ArgumentException("Width must be greater than 0");
-            return a;
-        }
-
+        // Validation method
         private double ValidateB(double b)
         {
             if (b <= 0)
-                throw new ArgumentException("Height must be greater than 0");
+                throw new ArgumentException("Side B must be greater that 0");
             return b;
         }
 
-        // Calculate area using A * B
+        // Override area calculation using A * B
         public override double GetArea()
         {
             return A * B;
         }
 
-        // Calculate perimeter using 2 * (A + B)
+        // Override perimeter calculation using 2 * (A + B)
         public override double GetPerimeter()
         {
             return 2 * (A + B);

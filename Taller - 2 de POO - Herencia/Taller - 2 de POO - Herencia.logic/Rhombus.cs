@@ -16,13 +16,13 @@ namespace Taller___2_de_POO___Herencia.logic
         public double D1
         {
             get { return _d1; }
-            set { _d2 = ValidateD1(value); }
+            set { _d1 = ValidateD1(value); }
         }
 
         public double D2
         {
             get { return _d2; }
-            set { _d1 = ValidateD2(value);  }
+            set { _d2 = ValidateD2(value);  }
         }
 
         // Constructor
@@ -54,6 +54,6 @@ namespace Taller___2_de_POO___Herencia.logic
             return (D1 * D2) / 2;
         }
 
-        // Perimeter calculation remains the same as square (4 * side)
+        // Perimeter calculation remains the same as square (4 * A)
     }
 }

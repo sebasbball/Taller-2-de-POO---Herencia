@@ -1,61 +1,43 @@
-﻿using System.Xml.Linq;
-using Taller___2_de_POO___Herencia.logic;
+﻿using System;
 
 namespace Taller___2_de_POO___Herencia.logic
 {
     /// <summary>
-    /// Class representing a Parallelogram
+    /// Class representing a Parallelogram, inherits from Rectangle
     /// </summary>
-    public class Parallelogram : GeometricFigure
+    public class Parallelogram : Rectangle
     {
-        // Private fields for base and height
-        private double _a;
-        private double _b;
+        // Private field for height
         private double _h;
 
-        // Properties with validation
-        public double A
-        {
-            get { return _a; }
-            set { _a = ValidateH(value); }
-        }
-
-        public double B
-        {
-            get { return _b; }
-            set { _b = ValidateH(value); }
-        }
-
+        // Property for height with validation
         public double H
         {
             get { return _h; }
             set { _h = ValidateH(value); }
-}
+        }
 
         // Constructor
-        public Parallelogram(string name, double a, double b, double h)
+        public Parallelogram(string name, double a, double b, double h) : base(name, a, b)
         {
-            Name = name;
-            A = a;
-            B = b;
             H = h;
         }
 
         // Validation method
-        private double ValidateH(double value)
+        private double ValidateH(double h)
         {
-            if (value <= 0)
-                throw new ArgumentException("Value must be greater than 0");
-            return value;
+            if (h <= 0)
+                throw new ArgumentException("Height must be greater than 0");
+            return h;
         }
 
-        // Calculate area using B * H
+        // Override area calculation using B * H
         public override double GetArea()
         {
             return B * H;
         }
 
-        // Calculate perimeter using 2 * (A + B)
+        // Override perimeter calculation using 2 * (A + B)
         public override double GetPerimeter()
         {
             return 2 * (A + B);

@@ -42,7 +42,7 @@ namespace Taller___2_de_POO___Herencia.Logic
         // Override perimeter calculation using 2 * (A + B)
         public override double GetPerimeter()
         {
-            return 2 * (Side + B);
+            return 2 * (A + B);
         }
     }
 }

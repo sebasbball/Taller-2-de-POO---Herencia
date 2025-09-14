@@ -4,27 +4,45 @@
 namespace Taller___2_de_POO___Herencia.logic
 {
     /// <summary>
-    /// Class representing a square, inherits from Rectangle
+    /// Class representing a square, inherits from GeometricFigure
     /// </summary>
-    public class Square : Rectangle
+    public class Square : GeometricFigure
     {
         // Property for side length
-        public double Side
+        private double _a;
+
+        // Propery for side length
+        public double A
         {
-            get { return A; }
-            set { A = B = ValidateA(value); }
+            get { return _a; }
+            set { _a = ValidateA(value); }
         }
 
         // Constructor
-        public Square(string name, double side) : base(name, side, side)
-        {}
+        public Square(string name, double a)
+        {
+            Name = name;
+            A = a;
+        }
 
         // Validation method
-        private double ValidateA(double side)
+        private double ValidateA(double a)
         {
-            if (side <= 0)
+            if (a <= 0)
                 throw new ArgumentOutOfRangeException("Side must be grater than 0");
-            return side;
+            return a;
+        }
+
+        // Calculate area using A * A
+        public override double GetArea()
+        {
+            return A * A;
+        }
+
+        // Calculate perimeter using 4 * A
+        public override double GetPerimeter()
+        {
+            return 4 * A;
         }
     }
 }
