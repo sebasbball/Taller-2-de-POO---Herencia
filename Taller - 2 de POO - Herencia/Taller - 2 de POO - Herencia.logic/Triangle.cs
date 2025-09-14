@@ -4,7 +4,7 @@ using Taller___2_de_POO___Herencia.logic;
 namespace Taller___2_de_POO___Herencia.Logic
 {
     /// <summary>
-    /// Class representing a triangle, inherits from Parallelogram
+    /// Class representing a triangle, inherits from Rectangle
     /// </summary>
     public class Triangle : Rectangle
     {
